@@ -4,12 +4,11 @@ const usuarioSchema = require('../models/usuarioModel');
 const router = express.Router();
 const usuario = usuarioSchema;
 
-// Rutas de usuarios
 //Obtener todos los usuarios
 router.get('/',async (req, res) => {
   const usuario = usuarioSchema;
   try{
-    usuario.find()
+    await usuario.find()
     .then((data)=> res.json(data))
   }catch (error) {
     res.status(500).json({ message: 'Error al obtener los usuarios.' });
@@ -17,18 +16,17 @@ router.get('/',async (req, res) => {
 });
 
 //Obtener un usuario por su ID
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const usuario = usuarioSchema;
   try{
-    usuario
+    await usuario
     .findById(id)
     .then((data)=> res.json(data))
   }catch (error) {
     res.status(500).json({ message: 'Error al obtener este usuario.' });
   }
 });
-
 
 //Crear un nuevo usuario
 router.post('/', async (req, res) => {
