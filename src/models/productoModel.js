@@ -2,11 +2,10 @@
 const mongoose = require('mongoose');
 
 const productoSchema =  mongoose.Schema({
-  id: { type: String, required: true ,unique: true },
   nombre: { type: String, required: true },
   descripcion: { type: String, required: true },
   avatar: { type: String, required: false },
-  isActivo: { type: Boolean ,default: false, required: true   },
+  isActivo: { type: Boolean ,default: false, required: true },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }, 
   

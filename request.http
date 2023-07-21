@@ -10,13 +10,13 @@ GET  http://localhost:3000/api/usuarios/1 HTTP/1.1
 content-type: application/json
 
 ### Crear Producto
-POST http://localhost:3000/api/usuarios HTTP/1.1
+POST http://localhost:3000/api/localhost:3000/api/productos HTTP/1.1
 content-type: application/json
 
 {
-    "nombre": "administrador",
-    "email":"admin@mail.com",
-    "password":"123456"
+    "nombre": "tablet",
+    "descripcion":"Lenovo",
+    "avatar":"https://http2.mlstatic.com/D_NQ_NP_609930-MLV69184754366_052023-O.webp"
 }
 
 ### Actualizar Producto
